@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus - Design a Website with a Data Source</title>
+    <style>
+        :root {
+            --bg-color: #020617;
+            --card-bg: rgba(30, 41, 59, 0.3);
+            --border-color: #1e293b;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #5eead4;
+            --text-title: #93c5fd;
+            --text-body: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: #f8fafc;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .exit-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .syllabus-label {
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin: 10px 0;
+            background: linear-gradient(to bottom, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-body);
+            font-size: 18px;
+        }
+
+        /* Timeline Logic */
+        .timeline {
+            position: relative;
+            padding-left: 60px;
+            margin-top: 50px;
+        }
+
+        /* The glowing vertical line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), var(--accent-blue));
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .topic-row {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        /* The glowing dot */
+        .dot {
+            position: absolute;
+            left: -51px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            background: var(--bg-color);
+            border: 3px solid var(--accent-blue);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 0 12px var(--accent-blue);
+        }
+
+        .topic-row:nth-child(even) .dot {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 12px var(--accent-purple);
+        }
+
+        /* The Card */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+            background: rgba(30, 41, 59, 0.5);
+            transform: translateX(10px);
+        }
+
+        .card-info h3 {
+            margin: 0 0 8px 0;
+            color: var(--text-title);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .card-info p {
+            margin: 0;
+            color: var(--text-body);
+            font-size: 15px;
+            line-height: 1.5;
+            max-width: 500px;
+        }
+
+        .view-btn {
+            background-color: var(--accent-green);
+            color: #020617;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .view-btn:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            .view-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <a href="#" class="exit-link">← EXIT LESSON</a>
+            <div class="syllabus-label">Syllabus</div>
+            <h1>Design a website with a data source</h1>
+            <p class="subtitle">Choose a lesson to start the presentation</p>
+        </header>
+
+        <div class="timeline">
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>Data modeling</h3>
+                        <p>Learn how to structure complex data relationships and build entity diagrams.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>A database containing the data to be used</h3>
+                        <p>Setting up your environment and initializing the core data structures.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>a List of sql queries enabling the site to function</h3>
+                        <p>Core retrieval logic and basic data management queries.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>a List of sql queries enabling the site to function</h3>
+                        <p>Advanced filtering, sorting, and conditional data fetching.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>a List of sql queries enabling the site to function</h3>
+                        <p>Optimization techniques and complex multi-table joins.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>Modeling of processing .i.e the sequence of pages and queries</h3>
+                        <p>Mapping the user journey and backend triggers for each interaction.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>Forms for adding and code or processing data</h3>
+                        <p>User input validation and secure data transmission methods.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>Forms for adding and code or processing data</h3>
+                        <p>Handling file uploads and asynchronous form processing.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>Fluid CSS style sheets including animations</h3>
+                        <p>Responsive design principles and flexible grid systems.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>Fluid CSS style sheets including animations</h3>
+                        <p>Creating smooth transitions and engaging UI animations.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>Fluid CSS style sheets including animations</h3>
+                        <p>Advanced layout techniques using Flexbox and CSS Grid.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>A few client-side scripts to make the site interactive</h3>
+                        <p>Using JavaScript to enhance user experience without page reloads.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>The complete website online (hosting with DB)</h3>
+                        <p>Deployment, environment variables, and directory access rights.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+
+            <div class="topic-row">
+                <div class="dot"></div>
+                <div class="card">
+                    <div class="card-info">
+                        <h3>A site migration/backup plan</h3>
+                        <p>Strategies for data safety and moving between server environments.</p>
+                    </div>
+                    <button class="view-btn">VIEW TOPIC</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
