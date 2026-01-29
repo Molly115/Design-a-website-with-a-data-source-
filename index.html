@@ -70,14 +70,12 @@
             font-size: 18px;
         }
 
-        /* Timeline Logic */
         .timeline {
             position: relative;
             padding-left: 60px;
             margin-top: 50px;
         }
 
-        /* The glowing vertical line */
         .timeline::before {
             content: '';
             position: absolute;
@@ -94,7 +92,6 @@
             margin-bottom: 24px;
         }
 
-        /* The glowing dot */
         .dot {
             position: absolute;
             left: -51px;
@@ -114,7 +111,6 @@
             box-shadow: 0 0 12px var(--accent-purple);
         }
 
-        /* The Card */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -123,6 +119,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            /* Needed for the link styling */
+            text-decoration: none; 
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
@@ -148,20 +146,21 @@
             max-width: 500px;
         }
 
-        .view-btn {
+        /* Styled <a> tag to look like your button */
+        .view-link {
             background-color: var(--accent-green);
             color: #020617;
-            border: none;
+            text-decoration: none;
             padding: 12px 24px;
             border-radius: 8px;
             font-weight: 700;
             font-size: 13px;
-            cursor: pointer;
             transition: transform 0.2s ease;
             white-space: nowrap;
+            display: inline-block;
         }
 
-        .view-btn:hover {
+        .view-link:hover {
             transform: scale(1.05);
             filter: brightness(1.1);
         }
@@ -172,8 +171,10 @@
                 align-items: flex-start;
                 gap: 20px;
             }
-            .view-btn {
+            .view-link {
                 width: 100%;
+                text-align: center;
+                box-sizing: border-box;
             }
         }
     </style>
@@ -189,6 +190,7 @@
         </header>
 
         <div class="timeline">
+
             <div class="topic-row">
                 <div class="dot"></div>
                 <div class="card">
@@ -196,7 +198,7 @@
                         <h3>Data modeling</h3>
                         <p>Learn how to structure complex data relationships and build entity diagrams.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic1.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -204,10 +206,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>A database containing the data to be used</h3>
+                        <h3>A database containing the data</h3>
                         <p>Setting up your environment and initializing the core data structures.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic2.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -215,10 +217,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>a List of sql queries enabling the site to function</h3>
+                        <h3>SQL Queries: Core Logic</h3>
                         <p>Core retrieval logic and basic data management queries.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic3.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -226,10 +228,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>a List of sql queries enabling the site to function</h3>
+                        <h3>SQL Queries: Filtering</h3>
                         <p>Advanced filtering, sorting, and conditional data fetching.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic4.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -237,10 +239,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>a List of sql queries enabling the site to function</h3>
+                        <h3>SQL Queries: Optimization</h3>
                         <p>Optimization techniques and complex multi-table joins.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic5.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -248,10 +250,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>Modeling of processing .i.e the sequence of pages and queries</h3>
+                        <h3>Modeling of processing</h3>
                         <p>Mapping the user journey and backend triggers for each interaction.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic6.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -259,10 +261,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>Forms for adding and code or processing data</h3>
+                        <h3>Forms & Data Processing</h3>
                         <p>User input validation and secure data transmission methods.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic7.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -270,10 +272,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>Forms for adding and code or processing data</h3>
+                        <h3>Advanced Forms</h3>
                         <p>Handling file uploads and asynchronous form processing.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic8.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -281,10 +283,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>Fluid CSS style sheets including animations</h3>
+                        <h3>Fluid CSS & Grids</h3>
                         <p>Responsive design principles and flexible grid systems.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic9.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -292,10 +294,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>Fluid CSS style sheets including animations</h3>
+                        <h3>UI Animations</h3>
                         <p>Creating smooth transitions and engaging UI animations.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic10.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -303,10 +305,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>Fluid CSS style sheets including animations</h3>
+                        <h3>Advanced Layouts</h3>
                         <p>Advanced layout techniques using Flexbox and CSS Grid.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic11.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -314,10 +316,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>A few client-side scripts to make the site interactive</h3>
+                        <h3>Client-side Scripts</h3>
                         <p>Using JavaScript to enhance user experience without page reloads.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic12.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -325,10 +327,10 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>The complete website online (hosting with DB)</h3>
+                        <h3>Deployment & Hosting</h3>
                         <p>Deployment, environment variables, and directory access rights.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic13.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
 
@@ -336,12 +338,13 @@
                 <div class="dot"></div>
                 <div class="card">
                     <div class="card-info">
-                        <h3>A site migration/backup plan</h3>
+                        <h3>Migration & Backup</h3>
                         <p>Strategies for data safety and moving between server environments.</p>
                     </div>
-                    <button class="view-btn">VIEW TOPIC</button>
+                    <a href="topic14.html" class="view-link">VIEW TOPIC</a>
                 </div>
             </div>
+
         </div>
     </div>
 
